@@ -1,16 +1,19 @@
-name : Prueba num 1
+name: Prueba numero 1
 
-on : 
+on:
   push:
     branches:
       - main
 
 jobs:
   decir-hola:
-      runs-on : ubuntu-latest
+    runs-on: ubuntu-latest
 
-      steps:
-        - name : Mostrar mensaje
-          run : echo "Hola mundo"
-        - name : Enviar Peticion
-          run: curl -X POST 'https://webhook.site/892f2749-aba3-44c8-af63-04640edf7a85' -H 'content-type: application/json' -d $'{"nombre": "Chamaquito"}'
+    steps:
+      - name: mostrar mensaje
+        run: echo "Hola Mundo"
+      - name: Enviar Petición
+        run: |
+          curl -X POST 'https://webhook.site/892f2749-aba3-44c8-af63-04640edf7a85' \
+          -H 'content-type: application/json' \
+          -d '{"nombre": "Paitan Romero Jonatan"}'
